@@ -1,4 +1,4 @@
-# Introduction to programming in Julia for spectroscopic analysis
+# Introduction to programming for spectroscopic analysis
 
 These tutorials are the data analysis part of a series to learn basic optics and spectroscopy.
 The data collected at the end of the optics tutorials will now be used
