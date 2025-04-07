@@ -1,56 +1,42 @@
-# Introduction to programming for spectroscopic analysis
+# Introduction to Julia for spectroscopy
 
-These tutorials are the data analysis part of a series to learn basic optics and spectroscopy.
-The data collected at the end of the optics tutorials will now be used
-to develop skills in programming and data analysis.
-We use the [Julia programming language](https://julialang.org) with Visual Studio Code. 
+This tutorial is designed to introduce students to the Julia programming language and its applications in spectroscopy.
+It is intended for students who have never programmed before, or who have only done a little programming in another language. The goal is to teach the basics of programming in Julia, and to provide examples of how to use Julia for data analysis and visualization in spectroscopy.
+It is not intended to be a comprehensive introduction to Julia, but rather a starting point for students to learn how to use Julia for their own research projects.
 
-
-## Install Julia and Visual Studio Code
-
-1. Download the [Julia](https://julialang.org/downloads/) programming language
-2. Download [Visual Studio Code](https://code.visualstudio.com/download) (the easiest way to run Julia code right now)
-3. In VS Code, install the Julia extension [from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) or from the Extensions in the VS Code application
-4. Activate the project environment by typing `]activate` in the Julia REPL
-5. Choose a Julia file (ending in `.jl`) in `lab_notebook` or `results` and run it
+## Contents
+Lesson 1: Programming basics in Julia \
+Lesson 2: Functions and plotting in Makie \
+Lesson 3: Reading/writing data and basic fitting \
+Lesson 4: Optimization and advanced fitting
 
 
-## Lessons
-
-Access the instructions in the `docs` folder and start with `Lesson 1.md`
-
-- Lesson 1: Julia basics and fitting
-- Lesson 2: Fitting to experimental data
-- Lesson 3: Cavity fit tutorial
-- Lesson 4: Optimizing a function
+## Lessons and Documentation
+Code for students are in the `lessons` directory.
+Each file has instructions and unfinished code for the students to complete. Access the instructor explanations in the `docs` folder.
 
 
 ## Corresponding experiments
-
-Start with the femtosecond pulse width experiment.
-Then there is a three-part FTIR tutorial where students do the following
-
-1. Measure the cavity length of a Fabry-Pérot etalon from the free spectral range.
-
-2. Fill the cavity with a solvent and measure the refractive index.
-
-3. Fill the cavity with a liquid with a resonant molecular mode. Students measure the mode splitting using a double Lorentzian function.
+The corresponding experimental tutorials can be found at the [Optics Tutorials](https://github.com/garrekstemo/Optics-Tutorials) repository.
+The main experiments that require data analysis are FTIR absorption and transmission spectroscopy and a femtosecond auto-correlation experiment.
 
 
 ## Input and Output
-
-Save all raw data to the `data` directory.
+Save all data to the `data` directory.
 Output, such as processed data and figures, should be saved to the `output` directory.
 
 
-## Why Julia
+## src
+The `src` directory contains scripts that generate fake data or test the code used in the lessons.
 
-Any software can of course be used to analyze data,
-but I choose Julia for a few reasons
 
-1. It is designed specifically for scientific applications and has many scientific libraries
-2. It is easy to learn, borrowing many ideas from Python and Matlab
-3. It is responsive and interactive, and can be used in Jupyter notebooks or in the REPL (Read Evaluate Print Loop) in the command line
+## Why Julia?
+Any software can of course be used to analyze data, but I choose Julia for a few reasons.
+
+1. It is designed specifically for scientific applications and has many robust scientific libraries.
+2. It is easy to learn, borrowing good ideas from Python and Matlab.
+3. It is responsive and interactive. It can be used in Jupyter notebooks or in the REPL (Read Evaluate Print Loop) in the command line. The VS Code extension for Julia also provides an interactive environment for writing and running Julia code.
 4. It is fast, comparable to C or Fortran. So if performance is your goal, you can stick with Julia and do not need to learn a second language.
-5. It is free and open source, and has a large and growing community.
-6. Reproducibiliy is a priority, and Julia has a built-in package manager that makes it easy to share code and reproduce results. This is important when designing code to be used for science.
+5. It is free, open source, and has a large and growing community. A modern, free, powerful, and simple programming language with a great selection of packages is a tremendous asset for any lab.
+6. Reproducibiliy is a priority, and Julia has a built-in package management system that makes it easy to share code and reproduce results. This is essential when designing code for science.
+7. I was sold on the excellent plotting library, Makie.jl. It is fast, interactive, and has a clean API.
