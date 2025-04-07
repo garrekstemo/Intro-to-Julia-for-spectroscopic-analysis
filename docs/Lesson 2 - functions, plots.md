@@ -1,4 +1,4 @@
-# Lesson 1: Julia Basics and Fitting
+# Lesson 2: Functions and Plots
 
 Open the file in the `lessons` directory titled `lesson 1.jl` and follow along.
 
