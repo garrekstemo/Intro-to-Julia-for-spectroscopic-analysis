@@ -19,6 +19,7 @@ Each file has instructions and unfinished code for the students to complete. Acc
 ## Corresponding experiments
 The corresponding experimental tutorials can be found at the [Optics Tutorials](https://github.com/garrekstemo/Optics-Tutorials) repository.
 The main experiments that require data analysis are FTIR absorption and transmission spectroscopy and a femtosecond auto-correlation experiment.
+After completing these tutorials students will move on to the experimental tutorials, where they will learn how to analyze raw data using Julia.
 
 
 ## Input and Output
