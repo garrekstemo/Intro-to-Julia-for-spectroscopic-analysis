@@ -1,38 +1,29 @@
-using CSV
-using DataFrames
-using GLMakie
-using LsqFit
+x = 0
 
 
-# Load data into a DataFrame and rename x and y columns
-dir = "data/"
-filenames = ["autocorr1", "autocorr2", "autocorr3"] .* ".lvm"
-data = []
-
-for filename in filenames
-    filepath = dir * filename
-    raw = DataFrame(CSV.File(filepath, header = [2]))
-    rename!(raw, ["time", "signal"])
-    push!(data, raw)
+if x > 0
+    println("x is positive")
+elseif x < 0
+    println("x is negative")
+else
+    println("x is zero")
 end
 
-# Write a fitting function
-function myfunction(t, p)
+
+function add(x, y)
+    return x + y
 end
 
-# Average your three data sets here
-# avg = 
+add(1, 2)  # 3
 
-# Now fit your function to the averaged data.
-# Use what you learned in Lesson 1,
-# then calculate the pulse width from the fit parameters.
-# Look up how pulse width is defined for femtosecond lasers.
+function print_numbers(n)
+    for i in 1:n
+        if i % 2 == 0
+            println("$i is even")
+        else
+            println("$i is odd")
+        end
+    end
+end
 
-
-# Create a figure to plot your data and fit
-
-fig = Figure()
-
-# Your code here
-
-fig
+print_numbers(10)
