@@ -1,83 +1,35 @@
 using GLMakie
-using CSV
-using DataFrames
 using LsqFit
 
-dir = "data/"  #  データに保存されているディレクトリ
-filename = "vacant_cavity.csv"　　#　データファイルの名前
-datapath = dir * filename  # データファイルのパス
-isfile(datapath)
+# Let's write a model of our data as a decaying exponential function, defined
+# f(x) = Ae^{-x / τ} + y0
+
+model(x, p) = p[1] * exp.(-x / p[2]) .+ p[3]
 
 
-# Load data and rename the two columns
-# Skip the header and footer metadata to load just the raw data.
-data = DataFrame(CSV.File(datapath, skipto = 20, footerskip = 37))
-rename!(data, ["wavenumber", "transmittance"])
+# Generate fake data and add noise to y.
+xdata = 0:0.5:20
+ydata = model(xdata, [6.0, 3.0, 0.1]) + 0.25 * randn(length(xdata))
+
+# Perform the fit using the LsqFit package
+p0 = [0.5, 0.5, 0.0]  # initial guess for parameters
+fit = curve_fit(model, xdata, ydata, p0)
+params = fit.param  # access the fit results
 
 
-# Make a basic figure to view the data in a separate window
+A = round(params[1], digits = 2)
+τ = round(params[2], digits = 2)
+y0 = round(params[3], digits = 2)
 
-fig = Figure()
-ax = Axis(fig[1, 1])
-lines!(data.wavenumber, data.transmittance)
-fig
-
-save("output/vacant cavity.png", fig)
-
-##
-
-#############################
-#           Step 1          #
-#############################
-
-# Find the difference between two peaks
-# and use the equation
-#
-#    Δν = 1 / (2 * n * L)
-#
-# to find the cavity length.
-#
-# n = refractive index (屈折率)
-# L = cavity length
-# Δν = ν2 - ν1
-
-ν1 = 0
-ν2 = 0
-
-Δν = ν2 - ν1
-
-##
-
-#############################
-#           Step 2          #
-#############################
-
-# Find the centers of two peaks using a fitting function.
-# Then calculate the Q-factor for your cavity.
-# Finally, plot your data and two fits below.
-
-"""
-Write a function here to fit a single peak
-in your spectrum.
-"""
-function myfunction()
-    # Your code here
-end
-
-##
-
-# Change the upper and lower bound to trim the data to one peak for fitting.
-
-lowerbound = 1800
-upperbound = 1950
-
-# fitdata = filter()
-
-p0 = []  # initial guess
-# fit = curve_fit()
-
+# Make the figure
 fig = Figure()
 
-# Make your figure here
+ax = Axis(fig[1, 1], title = "Exponential Curve Fit", xlabel = "τ", ylabel = "Signal")
 
+scatter!(ax, xdata, ydata, label = "data")
+lines!(ax, xdata, model(xdata, fit.param), color = :orangered, label = "fit")
+
+text!("τ = $(τ)\nA = $(A)", position = (12, 4.5))
+
+axislegend(ax)
 fig
