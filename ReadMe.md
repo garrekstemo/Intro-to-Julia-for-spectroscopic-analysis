@@ -1,5 +1,7 @@
 # Introduction to Julia for spectroscopy
 
+Julia version: 1.11
+
 This tutorial is designed to introduce students to the Julia programming language and its applications in spectroscopy.
 It is intended for students who have never programmed before, or who have only done a little programming in another language. The goal is to teach the basics of programming in Julia, and to provide examples of how to use Julia for data analysis and visualization in spectroscopy.
 It is not intended to be a comprehensive introduction to Julia, but rather a starting point for students to learn how to use Julia for their own research projects.
