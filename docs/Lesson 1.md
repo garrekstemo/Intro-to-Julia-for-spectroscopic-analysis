@@ -247,7 +247,7 @@ julia> a = ["hello", 2.0, 3]  # mixed array has type Any
 Notice that these arrays are of type `Vector{Int64}`, `Vector{Float64}`, and `Vector{Any}`.
 The type `Vector` is a one-dimensional array in Julia. It is a subtype of `Array`.
 
-```
+```julia
 julia> typeof(v)
 Vector{Int64} (alias for Array{Int64, 1})
 
@@ -378,7 +378,7 @@ julia> v * A  # what do you think will happen?
 ```
 You can also perform element-wise operations using the `.*`, `./`, and `.^` operators.
 
-```
+```julia
 julia> A .* B  # element-wise multiplication
 3×3 Matrix{Int64}:
   1   8  21

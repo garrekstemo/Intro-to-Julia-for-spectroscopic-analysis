@@ -52,7 +52,7 @@ Examples: `sin`, `cos`, `exp`, `log`, `sqrt`, `abs`, `round`, `floor`, `ceil`, `
 Play around with these functions in the REPL. \
 (To instructor: you don't have to do all of the below examples. They are just to show the variety of built-in functions available.)
 
-```
+```julia
 julia> sin(0)
 0.0
 
@@ -88,7 +88,7 @@ julia> min(3, 5)
 ```
 
 Let's define a simple function that takes one argument and returns the square of that argument.
-```
+```julia
 julia> square(x) = x^2  # function definition
 square (generic function with 1 method)
 
@@ -111,7 +111,7 @@ This is allowed because of Julia's "multiple dispatch" functionality and is a ke
 Broadcasting allows you to apply a function to each element of an array or collection.
 You can use the dot `.` operator to indicate that you want to apply a function element-wise.
 
-```
+```julia
 julia> f(x) = 1 + x
 f (generic function with 1 method)
 
@@ -123,7 +123,7 @@ julia> f(1.0)
 ```
 
 What happens if we try to apply this function to a vector?
-```
+```julia
 julia> v = [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -153,7 +153,7 @@ Stacktrace:
 The error message is telling us that the function `+` does not know how to add a scalar to a vector.
 To fix this, we can use broadcasting with [dot syntax](https://docs.julialang.org/en/v1/manual/functions/#man-vectorized). This is also known as "element-wise" operations, "vectorized" operations, or "broadcasting".
 
-```
+```julia
 julia> f.(v)  # apply f to each element of v
 3-element Vector{Int64}:
  2
@@ -163,7 +163,7 @@ julia> f.(v)  # apply f to each element of v
 
 You can also use broadcasting with other functions.
 
-```
+```julia
 julia> sin.(v)  # apply sin to each element of v
 3-element Vector{Float64}:
  0.8414709848078965
@@ -173,7 +173,7 @@ julia> sin.(v)  # apply sin to each element of v
 
 It is also possible to define a function that takes a vector as input and returns a vector as output.
 
-```
+```julia
 julia> f(x) = x .+ 1  # broadcasting with dot operator
 f (generic function with 1 method)
 julia> f(v)
@@ -184,7 +184,8 @@ julia> f(v)
  ```
 
 or using the `@.` macro
-```
+
+```julia
 julia> @. f(x) = x + 1  # broadcasting with @. macro
 f (generic function with 1 method)
 julia> f(v)
@@ -200,7 +201,8 @@ Control flow statements allow you to control the flow of execution in your code.
 This includes `if` statements, `for` loops, and `while` loops.
 ### If statements
 If statements allow you to execute code conditionally based on a boolean expression.
-```
+
+```julia
 x = 5
 if x > 0
     println("x is positive")
@@ -215,15 +217,13 @@ end
 
 Now change the value of `x` to a negative number and run the code again.
 
-```
-x = -5  # output: x is negative
-```
 
 What happens if you don't include the `end` statement?
 
 ### Loops
 Now let's make a loop that prints the numbers from 1 to 10.
-```
+
+```julia
 for i in 1:10
     println(i)
 end
@@ -231,7 +231,7 @@ end
 
 There are also `while` loops, which execute code while a condition is true.
 
-```
+```julia
 i = 1
 while i <= 10
     println(i)
@@ -244,7 +244,7 @@ It is more efficient in Julia to put code inside of functions.
 This allows you to reuse code and avoid writing the same code over and over.
 You can define functions with multiple arguments by separating the arguments with commas.
 
-```
+```julia
 function add(x, y)
         return x + y
     end
@@ -254,7 +254,7 @@ add(1, 2)  # 3
 
 Let's package an if statement and a for loop inside a function.
 
-```
+```julia
 function print_numbers(n)
     for i in 1:n
         if i % 2 == 0
