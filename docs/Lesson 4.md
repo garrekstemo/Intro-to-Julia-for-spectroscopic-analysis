@@ -1,4 +1,4 @@
-# Lesson 4: Optimizing a function
+# 4. Optimizing a function
 
 In the final experiment tutorial, you measured the spectrum for
 a polariton system.

@@ -1,4 +1,4 @@
-# Lesson 2: Functions and control flow
+# 2. Functions and control flow
 
 This lesson introduces students to Visual Studio Code. But first, the concept of files and folders are reviewed.
 Students create a project folder to store their tutorial files and future experiment code.

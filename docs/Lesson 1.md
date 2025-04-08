@@ -1,11 +1,11 @@
-# Programming basics in Julia
+# 1. Programming basics in Julia
 
 This lesson is a overview of basic programming concepts using the Julia language and the REPL.
 The intended audience is people who have never programmed before, or who have only done a little programming in another language.
 
 Goals
 1. Download and install Julia and Visual Studio Code
-2. Learn the basics of programming in Julia in the REPL (variables, if / else, loops)
+2. Learn the basics of programming using Julia in the REPL (variables, types, basic operations, booleans, and arrays)
 3. Find help in the Julia documentation and on the internet
 
 
@@ -14,22 +14,24 @@ Goals
 2. Follow the installation instructions for your operating system.
 3. Download and install [Visual Studio Code](https://code.visualstudio.com/).
 4. Install the Julia extension for Visual Studio Code by searching for "Julia" in the [Extensions Marketplace](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia).
-5. Open the REPL in the terminal by typing `julia` and pressing Enter. This will open the Julia REPL, where you can run Julia code interactively.
+5. Quit Visual Studio Code for now and open the terminal (command line interface) on your computer.
+
+We will use the Julia REPL (Read-Eval-Print Loop) in the terminal for this lesson, not VS Code.
+VS Code will be used in the next lesson. Here we just install it.
 
 
-## Addition, subtraction, multiplication, division
+## Variables, basic operations, and types
 Open the REPL (the command line interface for Julia) by typing `julia` in the terminal.
 REPL stands for Read-Eval-Print Loop.
-
 
 ### Basic operations and variable assignment
 Follow along with the code examples below in the REPL.
 Equals sign `=` is used for assignment, not equality.
 Feel free to adapt the code based on student feedback and progression.
 Remember to ask students to try things out themselves and play with the code.
-Use the question "What do you think will happen?" to encourage them to think about the code before running it. Also a useful way of thinking about their optics setups later.
+Use the question, "What do you think will happen?" to encourage students to think about the code before running it. Also a useful way of thinking about their optics setups later.
 
-Start simple with basic arithmetic on one variable.
+Start with basic operations on one variable.
 ```
 julia> a = 2  # assignment
 2
@@ -60,7 +62,13 @@ julia> a
 julia> a + 1
 6
 
-julia> a += 1  # increment a by 1
+julia> a = a + 1  # reassign a using itself
+6
+
+julia> a = 5  # reassign a again
+5
+
+julia> a += 1  # increment a by 1. This is a shorthand for a = a + 1
 6
 
 julia> a
@@ -77,7 +85,7 @@ julia> a /= 2  # divide a by 2
 ```
 
 
-### Variables and types
+### Basic types
 Now let's create some variables of different types and explore Julia's type system.
 
 ```
@@ -109,36 +117,22 @@ julia> typeof(d)
 String
 ```
 
-#### Questions
-- What happens when you type `a = hello`? (no quotes)
-    - What is the meaning of the single and double quotes?
-- What happens if you try to multiply a string by a number? Read the error message.
-    - Can you generate other error messages?
-- How do you repeat a string 3 times?
+### Questions
+1. What happens when you type `a = hello` (no quotes)? What is the meaning of the single and double quotes?
+2. What happens if you try to multiply a string by a number? Read the error message.
+3. Can you generate other error messages?
+4. How do you repeat a string 3 times?
+5. Check what `typeof` does by typing `?typeof` in the REPL.
 
 
-Now let's do some basic operations with these variables.
+### Playing with strings
 ```
-julia> a + b
-3.0
+julia> d = "hello"
+"hello"
 
-julia> a * b
-2.0
+julia> d * d  # string concatenation
+"hellohello"
 
-julia> a / b
-0.5
-
-julia> a^2
-1
-
-julia> a + b * c
-7.0 + 8.0im
-```
-
-How does Julia handle the resulting type?
-
-Playing with strings
-```
 julia> d^3
 "hellohellohello"
 
@@ -149,8 +143,79 @@ julia> d^3
 "hello hello hello "
 ```
 
-### Arrays and collections
-Arrays are a collection of elements, usually of the same type.
+### Logical operators
+Logical operators are used to perform logical operations on boolean values.
+Booleans are a type that can be either `true` or `false`.
+
+```
+julia> t = true
+true
+
+julia> f = false
+false
+
+julia> t && f  # logical AND
+false
+
+julia> t || f  # logical OR
+true
+
+julia> !t  # logical NOT
+false
+
+julia> t == f  # equality
+false
+
+julia> t != f  # inequality
+true
+
+julia> t === f  # strict equality
+false
+
+julia> t !== f  # strict inequality
+true
+```
+Try this by assigning numerical values to a and b (e.g. a = 1, b = 1.0).
+
+
+### Comparison operators
+Comparison operators are used to compare values.
+
+```
+julia> a = 1
+1
+
+julia> b = 2
+2
+
+julia> a < b  # less than
+true
+
+julia> a <= b  # less than or equal to
+true
+
+julia> a > b  # greater than
+false
+
+julia> a >= b  # greater than or equal to
+false
+
+julia> a == b  # equal to
+false
+
+julia> a != b  # not equal to
+true
+```
+
+### Questions
+1. Check how to use the funciton `isa` by typing `?isa` in the REPL.
+2. Use `isa` to check the type of `a`, and `b`. What does it return?
+3. What type `isa`? How can you check this?
+4. What is the difference between `==` and `===`?
+
+
+## Arrays
+Arrays are a collection of elements, usually of the same type but not always.
 
 ```
 julia> v = [1, 2, 3]  # array of integers
@@ -189,8 +254,14 @@ julia> typeof(w)
 Vector{Float64} (alias for Array{Float64, 1})
 ```
 
-#### Indexing
+#### Questions
+1. Try comparing arrays `v` and `w` using the comparison operators.
+1. What is the output of `v isa Array`?
+
+
+### Indexing arrays
 You can access elements of an array using indexing.
+Julia uses 1-based indexing, which means that the first element of an array is at index 1, not 0.
 
 ```
 julia> a[1]  # indexing starts at 1, not 0
@@ -218,7 +289,8 @@ julia> length(a)
 3
 ```
 
-#### Matrices
+
+### Matrices
 Matrices are two-dimensional arrays in Julia. You can create a matrix using the `reshape` function or by using semicolons to separate rows.
 
 ```

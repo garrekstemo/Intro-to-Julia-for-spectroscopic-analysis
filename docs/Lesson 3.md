@@ -1,4 +1,4 @@
-# Data files and Fitting
+# 3. Data files and Fitting
 
 
 ## Resources
