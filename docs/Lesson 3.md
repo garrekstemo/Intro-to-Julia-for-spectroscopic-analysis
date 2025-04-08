@@ -185,6 +185,6 @@ Hit `cmd+/` (`ctrol+/`) again to uncomment the line.
 Visualize the potential of two point charges with surface plot in 3D.
 You will need to look up the equation for the potential of a point charge in Cartesian coordinates and how to create a surface plot in Makie.
 
-q+ at (-a, 0) and q- at (+a, 0)
++q at (-a, 0) and -q at (+a, 0)
 
 $$\phi(x, y) = \frac{q}{4\pi\epsilon_0} \left( \frac{1}{\sqrt{(x+a)^2+y^2}} - \frac{1}{\sqrt{(x-a)^2+y^2}} \right)$$
