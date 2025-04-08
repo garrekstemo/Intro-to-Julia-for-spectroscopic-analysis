@@ -2,9 +2,12 @@
 
 filename="Introduction to Programming with Julia.pdf"
 
-pandoc ../docs/*.md -f commonmark --pdf-engine=lualatex \
+pandoc ../docs/*.md -f markdown+tex_math_dollars --pdf-engine=lualatex \
+    -V geometry:margin=1in \
+    -V mainfont="Libertinus Serif" \
+    -V mathfont="Libertinus Math" \
+    -V monofont="DejaVu Sans Mono" \
     -V colorlinks=true \
-    -V mainfont="Helvetica" \
     --toc \
     -o "../docs/$filename"
 cd ../docs
