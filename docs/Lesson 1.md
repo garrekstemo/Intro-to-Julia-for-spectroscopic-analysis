@@ -210,7 +210,7 @@ true
 ### Questions
 1. Check how to use the funciton `isa` by typing `?isa` in the REPL.
 2. Use `isa` to check the type of `a`, and `b`. What does it return?
-3. What type `isa`? How can you check this?
+3. What type is `isa`? How can you check this?
 4. What is the difference between `==` and `===`?
 
 
