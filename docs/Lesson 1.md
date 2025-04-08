@@ -32,7 +32,7 @@ Remember to ask students to try things out themselves and play with the code.
 Use the question, "What do you think will happen?" to encourage students to think about the code before running it. Also a useful way of thinking about their optics setups later.
 
 Start with basic operations on one variable.
-```
+```julia
 julia> a = 2  # assignment
 2
 
@@ -88,7 +88,7 @@ julia> a /= 2  # divide a by 2
 ### Basic types
 Now let's create some variables of different types and explore Julia's type system.
 
-```
+```julia
 julia> a = 1
 1
 
@@ -126,7 +126,8 @@ String
 
 
 ### Playing with strings
-```
+
+```julia
 julia> d = "hello"
 "hello"
 
@@ -147,7 +148,7 @@ julia> d^3
 Logical operators are used to perform logical operations on boolean values.
 Booleans are a type that can be either `true` or `false`.
 
-```
+```julia
 julia> t = true
 true
 
@@ -181,7 +182,7 @@ Try this by assigning numerical values to a and b (e.g. a = 1, b = 1.0).
 ### Comparison operators
 Comparison operators are used to compare values.
 
-```
+```julia
 julia> a = 1
 1
 
@@ -217,7 +218,7 @@ true
 ## Arrays
 Arrays are a collection of elements, usually of the same type but not always.
 
-```
+```julia
 julia> v = [1, 2, 3]  # array of integers
 3-element Vector{Int64}:
  1
@@ -263,7 +264,7 @@ Vector{Float64} (alias for Array{Float64, 1})
 You can access elements of an array using indexing.
 Julia uses 1-based indexing, which means that the first element of an array is at index 1, not 0.
 
-```
+```julia
 julia> a[1]  # indexing starts at 1, not 0
 "hello"
 
@@ -284,7 +285,7 @@ julia> a
 ```
 The length of a vector can be obtained using the `length` function.
 
-```
+```julia
 julia> length(a)
 3
 ```
@@ -293,7 +294,7 @@ julia> length(a)
 ### Matrices
 Matrices are two-dimensional arrays in Julia. You can create a matrix using the `reshape` function or by using semicolons to separate rows.
 
-```
+```julia
 julia> A = [1 2 3; 4 5 6; 7 8 9]  # matrix with semicolons
 3×3 Matrix{Int64}:
  1  2  3
@@ -326,7 +327,7 @@ julia> A[:, 1]  # all elements in the first column
 ```
 You can also use the `size` function to get the dimensions of a matrix.
 
-```
+```julia
 julia> size(A)
 (3, 3)
 julia> size(B)
@@ -336,7 +337,7 @@ julia> size(B)
 ### Matrix and vector operations
 You can perform various operations on matrices and vectors, such as addition, subtraction, multiplication, and division.
 
-```
+```julia
 julia> A + B  # matrix addition
 3×3 Matrix{Int64}:
   2   6  10
