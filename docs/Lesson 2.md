@@ -199,6 +199,8 @@ julia> f(v)
 ## Control flow
 Control flow statements allow you to control the flow of execution in your code.
 This includes `if` statements, `for` loops, and `while` loops.
+
+
 ### If statements
 If statements allow you to execute code conditionally based on a boolean expression.
 
@@ -217,8 +219,8 @@ end
 
 Now change the value of `x` to a negative number and run the code again.
 
-
 What happens if you don't include the `end` statement?
+
 
 ### Loops
 Now let's make a loop that prints the numbers from 1 to 10.
@@ -238,6 +240,7 @@ while i <= 10
     i += 1
 end
 ```
+
 
 ## Functions with multiple arguments
 It is more efficient in Julia to put code inside of functions.
@@ -271,6 +274,6 @@ print_numbers(10)
 This would have been tedious to write in the REPL.
 
 
-## Project
+## Activity
 1. Write a function `is_prime()` that takes an integer as input and returns `true` if the number is prime and `false` otherwise.
 2. Write another function `print_primes()` that takes an integer as input and prints all the prime numbers from 1 to that integer.

@@ -1,13 +1,15 @@
 x = 0
 
-
-if x > 0
-    println("x is positive")
-elseif x < 0
-    println("x is negative")
-else
-    println("x is zero")
+function check_number(x)
+    if x > 0
+        println("x is positive")
+    elseif x < 0
+        println("x is negative")
+    else
+        println("x is zero")
+    end
 end
+check_number(x)  # x is zero
 
 
 function add(x, y)
