@@ -252,7 +252,8 @@ function add(x, y)
 add(1, 2)  # 3
 ```
 
-Let's package an if statement and a for loop into a function.
+Let's package an if statement and a for loop inside a function.
+
 ```
 function print_numbers(n)
     for i in 1:n
@@ -268,3 +269,8 @@ print_numbers(10)
 ```
 
 This would have been tedious to write in the REPL.
+
+
+## Project
+1. Write a function `is_prime()` that takes an integer as input and returns `true` if the number is prime and `false` otherwise.
+2. Write another function `print_primes()` that takes an integer as input and prints all the prime numbers from 1 to that integer.
