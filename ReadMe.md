@@ -1,6 +1,6 @@
 # Introduction to Julia for spectroscopy
 
-Make with Julia version: 1.11.4
+Made with Julia version: 1.11.4
 
 This tutorial is designed to introduce students to the Julia programming language and its applications in spectroscopy.
 Lessons are more like lecture notes.
