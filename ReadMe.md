@@ -5,27 +5,26 @@ Made with Julia version: 1.11.4
 This tutorial is designed to introduce students to the Julia programming language and its applications in spectroscopy.
 Lessons are more like lecture notes.
 It is intended for students who have never programmed before, or who have only done a little programming in another language. The goal is to teach the basics of programming in Julia, and to provide examples of how to use Julia for data analysis and visualization in spectroscopy.
-It is not intended to be a comprehensive introduction to Julia, but rather a starting point for students to learn how to use Julia for their own research projects in spectroscopy.
+These lessons were not originally intended to be comprehensive, but they have evolved into nearly a full introduction to programming for non-programmers.
+They should serve as a starting point for students to learn how to use Julia for their own research projects in experimental spectroscopy.
 
 
-## Lessons and Documentation
-Code for students are in the `lessons` directory.
-Each file has instructions and unfinished code for the students to complete. Access the instructor explanations in the `docs` folder.
-
-
-## Corresponding experiments
-The corresponding experimental tutorials can be found at the [Optics Tutorials](https://github.com/garrekstemo/Optics-Tutorials) repository.
-The main experiments that require data analysis are FTIR absorption and transmission spectroscopy and a femtosecond auto-correlation experiment.
-After completing these tutorials students will move on to the experimental tutorials, where they will learn how to analyze raw data using Julia.
+## Lessons and exercises
+The lessons are organized in the `chapters` folder and corresponding coding exercises are tested in the `code` folder.
 
 
 ## Input and Output
-Save all data to the `data` directory.
+Students should save raw data in the `data` directory.
 Output, such as processed data and figures, should be saved to the `output` directory.
 
 
 ## src
-The `src` directory contains scripts that generate fake data or test the code used in the lessons.
+The `src` directory contains scripts that generate data for activites.
+
+
+## Corresponding experiments
+The corresponding experimental tutorials can be found at the [Optics Tutorials](https://github.com/garrekstemo/Optics-Tutorials) repository.
+These programming tutorials are designed to set students up to analyze data obtained during the optics tutorials.
 
 
 ## Why Julia?
