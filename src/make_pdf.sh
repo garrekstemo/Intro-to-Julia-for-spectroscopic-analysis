@@ -9,6 +9,6 @@ pandoc ../docs/*.md -f markdown+tex_math_dollars --pdf-engine=lualatex \
     -V monofont="DejaVu Sans Mono" \
     -V colorlinks=true \
     --toc \
-    -o "../docs/$filename"
-cd ../docs
+    -o "../pdf/$filename"
+cd ../pdf
 echo "PDF created at $PWD/$filename"
