@@ -1,26 +1,36 @@
 using GLMakie
 
-"""
-    damped_sine_wave(x, A, f, τ)
-Generate a damped sine wave.
-# Arguments
-- `x`: The x values.
-- `A`: The amplitude.
-- `f`: The frequency in Hz.
-- `τ`: The decay time constant in seconds.
-"""
-function decaying_damped_sine(x, A, f, τ)
+
+function damped_sine(x, A, f, τ)
     A * exp(-x / τ) * sin(2π * f * x )
 end
 
-x = 1:0.1:10
-y = decaying_damped_sine.(x, 1, 0.1, 0.5)
+seconds = 0:0.1:5
+intensity = damped_sine.(seconds, 3, 1, 1)
+intensity_noisy = y + 0.2 * randn(length(seconds))  # add noise
 
 
-fig = Figure()
-ax = Axis(fig[1, 1], title = "Decaying Damped Sine Wave", xlabel = "x", ylabel = "y")
-lines!(x, y)
-fig
+f = Figure()
+ax = Axis(f[1, 1],
+    title = "Damped decaying sine wave",
+    xlabel = "Time (s)",
+    ylabel = "Intensity",
+)
+scatter!(
+    seconds,
+    intensity_noisy,
+    color = :firebrick3,
+    label = "Noisy data",
+    )
+lines!(
+    seconds,
+    intensity,
+    color = :deepskyblue4,
+    linestyle = :dash,
+    label = "f(x) = A * exp(-x / τ) * sin(2π * f * x)",
+    )
 
+axislegend(position = :rb)
+f
 
-# save("output/damped_sine_wave.png", fig)
+# save("images/damped_sine_wave.png", f)
