@@ -59,3 +59,38 @@ end
 @test quadrant(-13.0, -2) == 3
 @test quadrant(4, -3) == 4
 @test quadrant(-2, 6) == 2
+
+
+function sum_to_n(n)
+    total = 0
+    for i in 1:n
+        total += i
+    end
+    total
+end
+
+@test sum_to_n(5) == 15
+@test sum_to_n(100) == 5050
+
+
+function collatz(n)
+    sequence = [n]
+    while n > 1
+        if n % 2 == 0
+            n = n ÷ 2
+        else
+            n = 3n + 1
+        end
+        push!(sequence, n)
+    end
+    sequence
+end
+
+@test collatz(19) == [
+                19, 58, 29, 
+                88, 44, 22, 
+                11, 34, 17, 
+                52, 26, 13, 
+                40, 20, 10, 
+                5, 16, 8, 
+                4, 2, 1]
