@@ -13,12 +13,9 @@ function check_number(x)
 end
 check_number(x)  # x is zero
 
-
-function add(x, y)
-    return x + y
+for i in 1:10
+    println(i)
 end
-
-add(1, 2)  # 3
 
 function print_numbers(n)
     for i in 1:n
