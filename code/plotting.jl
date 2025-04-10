@@ -7,7 +7,7 @@ end
 
 seconds = 0:0.1:5
 intensity = damped_sine.(seconds, 3, 1, 1)
-intensity_noisy = y + 0.2 * randn(length(seconds))  # add noise
+intensity_noisy = intensity + 0.2 * randn(length(seconds))  # add noise
 
 
 f = Figure()
@@ -27,10 +27,10 @@ lines!(
     intensity,
     color = :deepskyblue4,
     linestyle = :dash,
-    label = "f(x) = A * exp(-x / τ) * sin(2π * f * x)",
+    label = "f(t) = A exp(−t / τ) sin(2π f t)",
     )
 
 axislegend(position = :rb)
 f
 
-# save("images/damped_sine_wave.png", f)
+save("images/damped_sine_wave.png", f)
