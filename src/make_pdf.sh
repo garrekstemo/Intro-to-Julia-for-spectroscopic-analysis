@@ -2,7 +2,7 @@
 
 filename="Introduction to Programming with Julia.pdf"
 
-pandoc ../docs/*.md -f markdown+tex_math_dollars --pdf-engine=lualatex \
+pandoc ../chapters/*.md -f markdown+tex_math_dollars --pdf-engine=lualatex \
     -V geometry:margin=1in \
     -V mainfont="Libertinus Serif" \
     -V mathfont="Libertinus Math" \
