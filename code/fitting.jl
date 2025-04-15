@@ -1,6 +1,7 @@
 using GLMakie
 using LsqFit
 
+linear_model(x, p) = p[1] * x .+ p[2]
 
 function lorentz(x, p)
     A, Γ, x0 = p
@@ -8,6 +9,58 @@ function lorentz(x, p)
     @. A / (1 + h^2)
 end
 
+p = [0.5, 1]
+x = -9:2:9
+y = linear_model.(x, Ref(p)) .+ 1.5 .* randn.()
+
+p0 = [1.3, 0.2]
+fit = curve_fit(linear_model, x, y, p0)
+sigma = stderror(fit)  # access the standard error of the fit
+
+
+f = Figure()
+ax = Axis(f[1, 1])
+xlims!(ax, -10, 10)
+ylims!(ax, -10, 10)
+
+axislimits = ax.limits[]
+axrange = axislimits[2][2] - axislimits[2][1]
+
+for (xi, yi) in zip(x, y)
+    yfit = linear_model(xi, fit.param)
+
+    if yi > yfit
+        ymin = (yfit - axislimits[2][1]) / axrange
+        ymax = (yi - axislimits[2][1]) / axrange
+        println("yi > yfit: ", round(ymin, digits=2), " > ", round(ymax, digits=2))
+    else
+        ymin = (yi - axislimits[2][1]) / axrange
+        ymax = (yfit - axislimits[2][1]) / axrange
+        # println("yi > yfit", yi, " > ", yfit)
+    end
+
+    vlines!(xi, ymin=ymin, ymax=ymax, color = :gray)
+end
+scatter!(x, y, color = :deepskyblue3, label = "data")
+lines!(
+    -10:10,
+    linear_model.(-10:10, Ref(p0)),
+    linestyle = :dash,
+    color = :gray30,
+    label = "initial guess"
+    )
+lines!(
+    -10:10,
+    linear_model.(-10:10, Ref(fit.param)),
+    color = :tomato,
+    label = "fit"
+)
+
+f
+
+# save("images/linear_fit.png", f)
+
+##
 
 # Generate fake data and add noise to y.
 A = 1
