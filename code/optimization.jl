@@ -7,19 +7,14 @@ function squared_surface(model, xdata, ydata, p1, p2)
     return [loss(model, xdata, ydata, [p1[i], p2[j]]) for i in eachindex(p1), j in eachindex(p2)]
 end
 
-function squared_surface_3param(model, xdata, ydata, p2_vals, p3_vals; p1_fixed=0.0)
-    return [loss(model, xdata, ydata, [p1_fixed, p2_vals[i], p3_vals[j]])
-            for i in eachindex(p2_vals), j in eachindex(p3_vals)]
-end
 
-double_exp(x, p) = exp(-x / p[1]) + exp(-x / p[2])
 linear_model(x, p) = p[1] * x + p[2]
-sine_model(x, p) = p[1] * sin.(p[2] * x .+ p[3])
+double_exp(x, p) = exp(-x / p[1]) + exp(-x / p[2])
 
 # Linear model
-p_lin = [1, 2]
+p_lin = [2, 3.0]
 x_lin = range(-5, 5, length = 10)
-y_lin = linear_model.(x_lin, Ref(p_lin)) .+ 0.02 .* randn.()
+y_lin = linear_model.(x_lin, Ref(p_lin)) .+ 0.5 .* randn.()
 p1_lin = range(-5, 5, length = 100)
 p2_lin = range(-5, 5, length = 100)
 surf_lin = log10.(squared_surface(linear_model, x_lin, y_lin, p1_lin, p2_lin))

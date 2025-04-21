@@ -114,3 +114,22 @@ axislegend(ax)
 f
 
 # save("images/lorentzian_fit.png", f)
+##
+# Residuals
+# Depends on results from the fit above
+
+f = Figure(size = (900, 300))
+ax = Axis(f[1, 1],
+    title = "Residuals",
+    xlabel = "Wavelength (nm)",
+    xticks = LinearTicks(5)
+    )
+scatter!(
+    ax,
+    xdata,
+    ydata .- lorentz(xdata, fit.param),
+    label = "residuals"
+)
+f
+
+# save("images/residuals.png", f)
