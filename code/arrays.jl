@@ -16,6 +16,7 @@ v[2:2:end] = zeros(Int, length(v)÷2)
 v
 
 
+
 [x for x in 1:100 if x % 7 == 0]
 
 mystring = "hello world"

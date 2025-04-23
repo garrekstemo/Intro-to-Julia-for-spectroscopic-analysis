@@ -1,7 +1,6 @@
 using Test
 
 x = 0
-
 function check_number(x)
     if x > 0
         println("x is positive")
