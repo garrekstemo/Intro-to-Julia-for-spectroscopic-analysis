@@ -1,9 +1,12 @@
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 LsqFit = "2fda8390-95c7-5789-9bda-21331edee243"
 Optim = "429524aa-4258-5aef-a3af-852621145aeb"
 Optimization = "7f7a1694-90dd-40f0-9382-eb1efda571ba"
 OptimizationOptimJL = "36348300-93cb-4f02-beb5-3c3902f8871e"
+PhysicalConstants = "5ad8b20f-a522-5ce9-bfc9-ddf1d5bda6ab"
 RefractiveIndex = "97a43521-7681-4ec2-835f-5b8ab7e7617e"
 TransferMatrix = "2beed9eb-9e49-431e-8607-1bb8bf5c1db8"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
