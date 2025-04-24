@@ -38,7 +38,7 @@ for λ in λs
     push!(Rp1, Rp_)
 end
 
-npairs = 8
+npairs = 10
 unit = [tio2, ta2o5]
 mirror2 = [air, repeat(unit, npairs)..., air]
 Rp2 = Float64[]

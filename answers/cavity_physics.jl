@@ -20,10 +20,11 @@ end
 eV = e * u"J / C"
 
 λ0 = 630e-9u"m"
-n_L = 1.46
+# n_L = 1.46
+n_L = 2.1
 n_H = 2.39
 L_c = 1e-6u"m"
-R = dbr_reflectivity(1, 1, n_L, n_H, 2)
+R = dbr_reflectivity(1, 1, n_L, n_H, 10)
 R_cav = mirror_reflectivity(1, 1, n_L, n_H, 2)
 sb = stopband(n_L, n_H)
 
