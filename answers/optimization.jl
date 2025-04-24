@@ -51,8 +51,8 @@ lines!(ax2a, x_de, y_de)
 
 ax2b = Axis(f[2, 2],
     title = "Double Exponential Loss Surface",
-    xlabel = "p1",
-    ylabel = "p2",
+    xlabel = "τ1",
+    ylabel = "τ2",
     )
 heatmap!(p1_de, p2_de, surf_de')
 Colorbar(f[2, 3], label = "log10(Loss)")
