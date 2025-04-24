@@ -29,7 +29,7 @@ sio2 = Layer(λs, fill(n_sio2, length(λs)), zeros(length(λs)), t_sio2)
 tio2 = Layer(λs, fill(n_tio2, length(λs)), zeros(length(λs)), t_tio2)
 ta2o5 = Layer(n_ta2o5, t_ta2o5)
 
-npairs = 2
+npairs = 4
 unit = [tio2, sio2]
 mirror1 = [air, repeat(unit, npairs)..., air]
 Rp1 = Float64[]
