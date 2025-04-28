@@ -1,5 +1,4 @@
-# Answers to introduction to polariton spectroscopy
-
+# Answers to introduction to microcavity physics
 ## Question 3
 Constructive interference. High contrast between refractive indices of the two materials give greater reflection. 𝜆/4 thickness means light waves reflected are exactly out of phase with each other by 180 degrees, causing constructive interference. Multiple layers means multiple reflections, resulting in high overall reflectivity.
 
