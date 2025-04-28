@@ -1,16 +1,14 @@
 using FFTW
 using GLMakie
 
-function damped_sine(t, f, τ)
-    return sin(2π * f * t) * exp(-t / τ) 
-end
+interferrogram(t, f, τ) = sin(2π * f * t) * exp(-t / τ)
 
 f = 1.0
 τ = 2.0
-fs = 100
+fs = 1000
 
 t = 0:1/fs:20
-y = damped_sine.(t, f, τ) 
+y = interferrogram.(t, f, τ)
 
 X = fftshift(fftfreq(length(t), fs))
 Y = fftshift(abs.(fft(y)))
