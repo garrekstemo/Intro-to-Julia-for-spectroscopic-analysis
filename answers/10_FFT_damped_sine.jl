@@ -19,7 +19,7 @@ ax1 = Axis(fig[1, 1],
     ylabel = "Amplitude",
     xlabel = "Time (s)",
 )
-lines!(t, y) 
+lines!(t, y)
 
 ax2 = Axis(fig[1, 2],
     ylabel = "Amplitude",
