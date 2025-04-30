@@ -9,7 +9,7 @@ These lessons were not originally intended to be comprehensive, but they have ev
 They should serve as a starting point for students to learn how to use Julia for their own research projects in experimental spectroscopy.
 
 
-## Lessons and problems
+## How this repository is organized
 Lessons include short exercises to be done in class, and longer problems to be done outside of class.
 These are organized by chapter in the `chapters` directory.
 Solutions to the exercises and problems, along with the code that generates the figures, are included in the `answers` directory.
