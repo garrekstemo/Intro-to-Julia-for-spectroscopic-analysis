@@ -3,12 +3,10 @@ using GLMakie
 
 interferrogram(t, n, f) = (1 / n) * sin(2π * n * f * t)
 
-N = 2^12 - 1  # number of points
+N = 2^10 - 1  # number of points
+# N = 2^5 - 1  # number of points
 Ts = 1 / (1.1 * N)  # sample spacing
 fs = 1 / Ts  # sample rate (samples per second)
-
-# Extra information
-df = fs / N  # frequency resolution in Hz
 fn = fs / 2  # Nyquist frequency
 
 # Time coordinate
