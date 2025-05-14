@@ -12,6 +12,7 @@ They should serve as a starting point for students to learn how to use Julia for
 ## TODO
 - [ ] Files, folders, and environments should be done before the first homework.
 - [ ] Lesson 2 should be broken up into two lessons (maybe include files in one of them).
+- [ ] Need to teach modulo early.
 
 
 ## How this repository is organized
