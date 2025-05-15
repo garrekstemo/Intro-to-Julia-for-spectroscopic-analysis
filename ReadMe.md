@@ -9,12 +9,6 @@ These lessons were not originally intended to be comprehensive, but they have ev
 They should serve as a starting point for students to learn how to use Julia for their own research projects in experimental spectroscopy.
 
 
-## TODO
-- [ ] Files, folders, and environments should be done before the first homework.
-- [ ] Lesson 2 should be broken up into two lessons (maybe include files in one of them).
-- [ ] Need to teach modulo early.
-
-
 ## How this repository is organized
 Lessons include short exercises to be done in class, and longer problems to be done outside of class.
 These are organized by chapter in the `chapters` directory.
