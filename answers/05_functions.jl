@@ -1,5 +1,7 @@
 using Test
 
+# In-class exercises
+# Exercise 1
 function is_even(x)
     x % 2 == 0
 end
@@ -8,11 +10,17 @@ end
 @test is_even(3) == false
 @test is_even(0) == true
 
+
+# Exercise 2
 join_with_space(a, b) = "$a $b"
 
 @test join_with_space("good", "morning") == "good morning"
 @test join_with_space("Julia", "rocks") == "Julia rocks"
 
+##
+# Problems
+
+# Problem 1
 
 function wavelength_to_ev(λ)
     h = 4.135e-15 # eV·s
@@ -27,36 +35,8 @@ end
 @test wavelength_to_ev(310) ≈ 4.0 atol=1e-2
 @test wavelength_to_ev(1240) ≈ 1.0 atol=1e-2
 
-
-function nth_odd(x)
-    2 * x - 1
-end
-
-@test nth_odd(1) == 1
-@test nth_odd(5) == 9
-@test nth_odd(19) == 37
-
-
-
-# Activity
-
-# Do this one later
-# 2. Write a function that returns the quadrant (1, 2, 3, 4) of a point (x, y) in 2D Cartesian space.
-
-#     *Bonus: What should the function return if the point is on an axis or the origin?*
-
-#     ```julia
-#     function quadrant(x, y)
-#         # add code here
-#     end
-
-#     using Test
-#     @test quadrant(1.0, 2.0) == 1
-#     @test quadrant(-13.0, -2) == 3
-#     @test quadrant(4, -3) == 4
-#     @test quadrant(-2, 6) == 2
-#     ```
-
+##
+# Problem 2
 
 function quadrant(x,y)
     if x > 0 && y > 0
@@ -77,6 +57,8 @@ end
 @test quadrant(4, -3) == 4
 @test quadrant(-2, 6) == 2
 
+##
+# Problem 3
 
 function collatz(n)
     sequence = [n]
