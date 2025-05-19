@@ -1,4 +1,4 @@
-# Introduction to Julia for spectroscopy
+# Introduction to Julia for Spectroscopy
 
 Made with Julia version: 1.11.5
 
