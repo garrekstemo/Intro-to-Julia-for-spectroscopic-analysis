@@ -2,17 +2,18 @@
 
 Made with Julia version: 1.11.5
 
-This tutorial is designed to introduce students to the Julia programming language applied to analysis for spectroscopy.
+This short course is designed to introduce students to the Julia programming language applied to analysis for spectroscopy.
 It is intended for students who have never programmed before, or who have only done a little programming in another language.
 The goal is to teach the basics of programming in Julia, and to provide examples of how to use Julia for data analysis and visualization in spectroscopy.
-These lessons were not originally intended to be comprehensive, but they have evolved into nearly a complete introduction to computer science.
+These lessons were not originally intended to be comprehensive, but they have evolved into somewhat of a complete introduction to programming.
 They should serve as a starting point for students to learn how to use Julia for their own research projects in experimental spectroscopy.
 
 
 ## How this repository is organized
 Lessons include short exercises to be done in class, and longer problems to be done outside of class.
 These are organized by chapter in the `chapters` directory.
-Solutions to the exercises and problems, along with the code that generates the figures, are included in the `answers` directory.
+The code that generates the figures are in the `generate_images` directory.
+Answers to the exercises and problems are in a separate repository, which is not included here.
 
 Data needed for the exercises and problems is included in the `data` directory.
 
