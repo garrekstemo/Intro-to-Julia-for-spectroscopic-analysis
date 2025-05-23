@@ -56,16 +56,16 @@ Feel free to cut out sections that are not relevant or if time is a concern.
 
 ### Example schedule
 | Day | Chapter | Topics |
-|-----|-------|-------|
-| **Week 1**
+|-----|---------|--------|
+| **Week 1** |||
 | 1   | Ch 1: Introduction to Julia | Installation, files, folders, and environments  |
 | 2   | Ch 2: Variables, operators, and types | Variables, basic operations, types, and strings |
 | 3   | Ch 3: Conditionals | Boolean expressions, comparison operators, logic, and if/else statements |
-| **Week 2**
+| **Week 2** |||
 | 4   | Ch 4: Iteration | While and For loops |
 | 5   | Ch 5: Functions | Built-in functions, user-defined functions, assignment form |
 | 6   | Ch 6: Arrays | Indexing, slicing, range objects, multi-dimensional arrays, manipulating arrays, broadcasting, and comprehensions |
-| **Week 3-4** 
+| **Week 3-4** |||
 | 7   | Ch: 7 Plotting | Basic plotting with Makie.jl |
 | 8   | Ch 8: Basic Fitting | Least squares fitting with LsqFit.jl |
 | 9   | Ch 9: Optimization | Apply least squares fitting to a more complex problem |
