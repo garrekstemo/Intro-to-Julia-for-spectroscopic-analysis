@@ -42,3 +42,31 @@ I choose the Julia programming language in particular for several reasons:
 5. Scientific software can be very expensive. Julia is free, open source, and has a [helpful community](https://discourse.julialang.org).
 6. Reproducibiliy is a priority, and Julia has a built-in package management system that makes it easy to share code and reproduce results. This is essential when designing code for science.
 7. I was sold on the excellent plotting library, Makie.jl. It is fast, interactive, and has a clean API.
+
+
+## Recommended pace
+
+Chapters 1 through 6 cover programming fundamentals.
+These should ideally be covered in two weeks with about 1 hour of class time per chapter, and 2-3 hours of homework per week.
+
+Chapters 7 through 10 cover data analysis and visualization.
+These can be covered in about a week, maybe a little more depending on how much detail is spent on each chapter.
+
+Feel free to cut out sections that are not relevant or if time is a concern.
+
+### Example schedule
+| Day | Chapter | Topics |
+|-----|-------|-------|
+| **Week 1**
+| 1   | Ch 1: Introduction to Julia | Installation, files, folders, and environments  |
+| 2   | Ch 2: Variables, operators, and types | Variables, basic operations, types, and strings |
+| 3   | Ch 3: Conditionals | Boolean expressions, comparison operators, logic, and if/else statements |
+| **Week 2**
+| 4   | Ch 4: Iteration | While and For loops |
+| 5   | Ch 5: Functions | Built-in functions, user-defined functions, assignment form |
+| 6   | Ch 6: Arrays | Indexing, slicing, range objects, multi-dimensional arrays, manipulating arrays, broadcasting, and comprehensions |
+| **Week 3-4** 
+| 7   | Ch: 7 Plotting | Basic plotting with Makie.jl |
+| 8   | Ch 8: Basic Fitting | Least squares fitting with LsqFit.jl |
+| 9   | Ch 9: Optimization | Apply least squares fitting to a more complex problem |
+| 10  | Ch 10: Fourier Transforms | FT basics and Fourier transforms with FFTW.jl |
