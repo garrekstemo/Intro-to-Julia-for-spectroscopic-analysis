@@ -77,7 +77,6 @@ Feel free to cut out sections that are not relevant or if time is a concern.
 | Wednesday   | Ch: 7 Plotting | Basic plotting with Makie.jl |
 | Friday   | Ch 8: Basic Fitting | Least squares fitting with LsqFit.jl |
 
-
 #### Week 4
 | Day | Chapter | Topics |
 |-----|---------|--------|
