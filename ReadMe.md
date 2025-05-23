@@ -54,6 +54,7 @@ These can be covered in about a week, maybe a little more depending on how much 
 
 Feel free to cut out sections that are not relevant or if time is a concern.
 
+
 ### Example schedule
 
 #### Week 1
