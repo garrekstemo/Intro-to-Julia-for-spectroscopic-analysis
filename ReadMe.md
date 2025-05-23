@@ -55,18 +55,32 @@ These can be covered in about a week, maybe a little more depending on how much 
 Feel free to cut out sections that are not relevant or if time is a concern.
 
 ### Example schedule
+
+#### Week 1
 | Day | Chapter | Topics |
 |-----|---------|--------|
-| **Week 1** |||
-| 1   | Ch 1: Introduction to Julia | Installation, files, folders, and environments  |
-| 2   | Ch 2: Variables, operators, and types | Variables, basic operations, types, and strings |
-| 3   | Ch 3: Conditionals | Boolean expressions, comparison operators, logic, and if/else statements |
-| **Week 2** |||
-| 4   | Ch 4: Iteration | While and For loops |
-| 5   | Ch 5: Functions | Built-in functions, user-defined functions, assignment form |
-| 6   | Ch 6: Arrays | Indexing, slicing, range objects, multi-dimensional arrays, manipulating arrays, broadcasting, and comprehensions |
-| **Week 3-4** |||
-| 7   | Ch: 7 Plotting | Basic plotting with Makie.jl |
-| 8   | Ch 8: Basic Fitting | Least squares fitting with LsqFit.jl |
-| 9   | Ch 9: Optimization | Apply least squares fitting to a more complex problem |
-| 10  | Ch 10: Fourier Transforms | FT basics and Fourier transforms with FFTW.jl |
+| Monday   | Ch 1: Introduction to Julia | Installation, files, folders, and environments  |
+| Wednesday   | Ch 2: Variables, operators, and types | Variables, basic operations, types, and strings |
+| Friday   | Ch 3: Conditionals | Boolean expressions, comparison operators, logic, and if/else statements |
+
+#### Week 2
+| Day | Chapter | Topics |
+|-----|---------|--------|
+| Monday   | Ch 4: Iteration | While and For loops |
+| Wednesday   | Ch 5: Functions | Built-in functions, user-defined functions, assignment form |
+| Friday   | Ch 6: Arrays | Indexing, slicing, range objects, multi-dimensional arrays, manipulating arrays, broadcasting, and comprehensions |
+
+#### Week 3
+| Day | Chapter | Topics |
+|-----|---------|--------|
+| Monday   | Review Ch 1-6 | Variables, conditionals, iteration, arrays, functions |
+| Wednesday   | Ch: 7 Plotting | Basic plotting with Makie.jl |
+| Friday   | Ch 8: Basic Fitting | Least squares fitting with LsqFit.jl |
+
+
+#### Week 4
+| Day | Chapter | Topics |
+|-----|---------|--------|
+| Monday   | Ch 9: Optimization | Apply least squares fitting to a more complex problem |
+| Wednesday  | Ch 10: Fourier Transforms | FT basics and Fourier transforms with FFTW.jl |
+| Friday  | Review Ch 7-10 | Plotting, fitting, Fourier transforms |
