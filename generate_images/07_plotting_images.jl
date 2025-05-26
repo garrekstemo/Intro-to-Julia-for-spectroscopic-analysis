@@ -34,7 +34,7 @@ intensity_noisy = intensity + 0.2 * randn(length(seconds))  # add noise
 f = Figure()
 ax = Axis(f[1, 1],
     title = "Damped decaying sine wave",
-    xlabel = "Time (s)",
+    xlabel = "Time (ps)",
     ylabel = "Intensity",
 )
 scatter!(
@@ -58,7 +58,37 @@ f
 
 ##
 
-# Cascading layout
+# Cascading layout (simple)
+
+function damped_sine(x, A, f, τ)
+    A * exp(-x / τ) * sin(2π * f * x )
+end
+
+f = Figure()
+ax = Axis(f[1, 1],
+    title = "Time traces",
+    xlabel = "Time (ps)",
+    ylabel = "Intensity",
+)
+
+ps_hires = 0:0.02:5
+
+num_data_sets = 3
+offset = 5
+noise_level = 0.1
+
+for i in 1:num_data_sets
+    A, ω, τ = rand(1:3, 3)
+    intensity = damped_sine.(ps, A, ω, τ) .+ noise_level * randn(length(ps))
+    lines!(ps, intensity .+ (i - 1) * offset, label = "Data set $i")
+end
+
+axislegend(ax)
+f
+
+# save("images/cascading_layout.png", f)
+
+##
 
 function damped_sine(x, A, f, τ)
     A * exp(-x / τ) * sin(2π * f * x )
