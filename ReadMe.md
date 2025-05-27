@@ -34,8 +34,6 @@ These should ideally be covered in two weeks with about 1 hour of class time per
 Chapters 7 through 10 cover data analysis and visualization.
 These can be covered in about a week, maybe a little more depending on how much detail is spent on each chapter.
 
-Feel free to cut out sections that are not relevant or if time is a concern.
-
 
 ### Example schedule
 
