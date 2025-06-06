@@ -71,7 +71,7 @@ ax = Axis(f[1, 1],
     ylabel = "Intensity",
 )
 
-ps_hires = 0:0.02:5
+ps = 0:0.02:5
 
 num_data_sets = 3
 offset = 5
@@ -90,32 +90,23 @@ f
 
 ##
 
+# Fonts and styling
+
 function damped_sine(x, A, f, τ)
     A * exp(-x / τ) * sin(2π * f * x )
 end
 
-ps = 0:0.1:5
-ps_hires = 0:0.01:5  # higher resolution for the line plot
+noise_level = 0.1
+ps = 0:0.02:5
+A, ω, τ = 1, 1, 1
+intensity = damped_sine.(ps, A, ω, τ) .+ noise_level * randn(length(ps))
 
-f = Figure()
+f = Figure(fontsize = 20)
 ax = Axis(f[1, 1],
-    title = "Time traces",
+    title = "Styled plot",
     xlabel = "Time (ps)",
     ylabel = "Intensity",
 )
-
-num_data_sets = 3
-offset = 5
-noise_level = 0.5
-for i in 1:num_data_sets
-    A, ω, τ = rand(1:3, 3)
-    intensity = damped_sine.(ps_hires, A, ω, τ)
-    intensity_noisy = damped_sine.(ps, A, ω, τ) + noise_level * randn(length(ps))
-
-    scatter!(ps, intensity_noisy .+ i * offset)
-    lines!(ps_hires, intensity .+ i * offset, color = :black, linestyle = :dash)
-end
+lines!(ps, intensity)
 
 f
-
-##
