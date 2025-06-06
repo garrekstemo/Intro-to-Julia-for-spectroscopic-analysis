@@ -83,10 +83,22 @@ err_Γ = round(sigma[2], digits = 1)
 x0 = round(params[3], digits = 2)
 
 # Make the figure
-f = Figure()
+f = Figure(size = (600, 600))
 DataInspector()
 
-ax = Axis(f[1, 1],
+ax1 = Axis(f[1, 1],
+    title = "Residuals",
+    xlabel = "Wavelength (nm)",
+    xticks = LinearTicks(5),
+    height = 100,
+    )
+scatter!(
+    xdata,
+    ydata .- lorentz(xdata, fit.param),
+    label = "residuals"
+)
+
+ax2 = Axis(f[2, 1],
     title = "Lorentzian Line Shape",
     xlabel = "Wavelength (nm)",
     ylabel = "Absorbance",
@@ -94,42 +106,24 @@ ax = Axis(f[1, 1],
     )
 
 scatter!(
-    ax,
     xdata,
     ydata,
     color = :tomato,
     label = "data"
 )
 lines!(
-    ax,
     xdata,
     lorentz(xdata, fit.param),
     color = :indigo,
+    linewidth = 3,
     label = "fit"
 )
 hlines!(0.5, linestyle = :dash, color = :gray)
 
 text!("FWHM = ($(Γ) ± $(err_Γ)) nm", position = (400, 0.7))
-axislegend(ax)
+
+hidexdecorations!(ax1, grid=false)
+axislegend(ax2)
 f
 
-# save("images/lorentzian_fit.png", f)
-##
-# Residuals
-# Depends on results from the fit above
-
-f = Figure(size = (900, 300))
-ax = Axis(f[1, 1],
-    title = "Residuals",
-    xlabel = "Wavelength (nm)",
-    xticks = LinearTicks(5)
-    )
-scatter!(
-    ax,
-    xdata,
-    ydata .- lorentz(xdata, fit.param),
-    label = "residuals"
-)
-f
-
-# save("images/residuals.png", f)
+# save("images/lorentzian_fit_residuals.png", f)
